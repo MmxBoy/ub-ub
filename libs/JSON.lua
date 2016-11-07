@@ -2579,7 +2579,7 @@ void print_string_gw (struct tgl_state *TLSR, void *extra, int success, const ch
   } else {
     #ifdef USE_JSON
       json_t *res = json_object ();
-      assert (json_object_set (res, "result", json_string (name)) >= 0);
+      //assert (json_object_set (res, "result", json_string (name)) >= 0);
       char *s = json_dumps (res, 0);
       mprintf (ev, "%s\n", s);
       json_decref (res);
@@ -3353,7 +3353,7 @@ void callback_extf (struct tgl_state *TLS, void *extra, int success, const char 
   } else {
     #ifdef USE_JSON
     json_t *res = json_object ();
-    assert (json_object_set (res, "result", json_string (buf)) >= 0);
+    //assert (json_object_set (res, "result", json_string (buf)) >= 0);
     char *s = json_dumps (res, 0);
     mprintf (ev, "%s\n", s);
     json_decref (res);
@@ -4447,7 +4447,7 @@ void print_message (struct in_ev *ev, struct tgl_message *M) {
     print_media (ev, &M->media);
   }
   mpop_color (ev);
-  assert (!color_stack_pos);
+  //assert (!color_stack_pos);
   mprintf (ev, "\n");
   //print_end();
 }
